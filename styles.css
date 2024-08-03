@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
+
+body {
+    background-color: #111111;
+    color: #FFFFFF;
+}
+
+h1 {
+    font-size: 2rem;
+    filter: drop-shadow(0rem 0rem 0.5rem #6c6c6c)
+}
+
+.snowflake {
+    position: fixed;
+    top: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.8;
+    color: #ffffff;
+}
+
+.container {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow-y: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    font-family: "Kalam", cursive;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.girl-hanging {
+    max-width: 150px;
+    animation: hanging 5s infinite;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+
+    filter: drop-shadow(0 0 0.1rem #CCC) saturate(0.3);
+}
+
+@keyframes hanging {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(5deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.container span {
+    color: rgb(255, 0, 0);
+}
+
+.container span::after {
+    content: '|';
+    animation-name: blinking;
+    animation-duration: .71s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes blinking {
+    from {
+        color: transparent;
+    }
+
+    to {
+        color: lightgrey;
+    }
+}
+
+.links-container {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.links-container a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 400;
+    border: 1px solid #FFFFFF;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+    margin-bottom: 0.5rem;
+}
+
+.links-container a:hover {
+    background-color: #FFFFFF;
+    color: #111111;
+}
