@@ -1,8 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
 
 body {
-    background-color: #111111;
     color: #FFFFFF;
+    background-image: url('https://i.pinimg.com/originals/f4/b8/49/f4b84973eacdb9abec030abbbc7bd3da.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #000000;
 }
 
 h1 {
@@ -17,6 +22,16 @@ h1 {
     pointer-events: none;
     opacity: 0.8;
     color: #ffffff;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 0;
 }
 
 .container {
