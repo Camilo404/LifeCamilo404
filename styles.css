@@ -49,14 +49,14 @@ h1 {
 
 .girl-hanging {
     max-width: 150px;
-    animation: hanging 5s infinite;
+    animation: hanging 6s ease-in-out infinite;
     pointer-events: none;
     user-select: none;
     -webkit-user-drag: none;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-
+    transform-origin: top center;
     filter: drop-shadow(0 0 0.1rem #CCC) saturate(0.3);
 }
 
@@ -64,42 +64,67 @@ h1 {
     0% {
         transform: rotate(0deg);
     }
-
+    25% {
+        transform: rotate(8deg);
+    }
     50% {
+        transform: rotate(-8deg);
+    }
+    75% {
         transform: rotate(5deg);
     }
-
     100% {
         transform: rotate(0deg);
     }
 }
 
+@keyframes subtle-float {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes subtle-horizontal-sway {
+    0% {
+        transform: translateX(-8px);
+    }
+    100% {
+        transform: translateX(8px);
+    }
+}
+
 .container span {
     color: rgb(255, 0, 0);
+    position: relative;
 }
 
 .container span::after {
     content: '|';
-    animation-name: blinking;
-    animation-duration: .71s;
-    animation-iteration-count: infinite;
+    position: absolute;
+    right: -3px;
+    animation: blinking 0.8s ease infinite;
+    font-weight: 100;
 }
 
 @keyframes blinking {
-    from {
-        color: transparent;
+    0%, 100% {
+        opacity: 0;
     }
-
-    to {
-        color: lightgrey;
+    50% {
+        opacity: 1;
+        color: rgba(255, 255, 255, 0.8);
     }
 }
 
 .links-container {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     justify-content: center;
     align-items: center;
+    margin-top: 1rem;
 }
 
 .links-container a {
@@ -108,13 +133,19 @@ h1 {
     font-size: 1rem;
     font-weight: 400;
     border: 1px solid #FFFFFF;
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 1.2rem;
     border-radius: 0.5rem;
-    transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+    transition: all 0.3s ease-in-out;
     margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
 .links-container a:hover {
     background-color: #FFFFFF;
     color: #111111;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
 }
